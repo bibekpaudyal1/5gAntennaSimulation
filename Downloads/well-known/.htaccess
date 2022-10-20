@@ -1,0 +1,4 @@
+
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^office\.crupeesoft\.com$
+RewriteRule ^/?$ "https\:\/\/office\.crupeesoft\.com\/view\/auth\/login\.php" [R=301,L]

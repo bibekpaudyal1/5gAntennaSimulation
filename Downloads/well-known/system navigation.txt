@@ -1,0 +1,48 @@
+#Admin and employee (folder:auth)
+1. login.php
+2. logout.php
+
+#Dashboard admin and Employee (folder:dashboard)
+1. admin.php
+2. emp.php	
+
+#Employee (Folder: emp)
+1. my-profile.php
+2. leaves.php
+3. holidays.php
+4. attendance.php (Commuting)
+
+5. tasks.php
+6. notice.php
+7. req.php (Request Form)
+	#
+	req-buss-trip.php (Business Trip Application Form)
+	Request for suggest idea	
+	Request for requirements of HR
+	Request of Budget
+	Request of Expenditure
+	outgoing/inquiry application
+	#
+8. work-status.php
+#
+Meeting Schedule
+Daily work Report
+Sending Work
+Preliminary Work Research
+Create Work
+Work Evaluation
+#
+
+#Admin (Folder: control)
+1. attendance.php
+2. leave.php
+3. holiday.php
+4. notice.php
+#(Salary)
+5. salary-emp.php (For adding employee in the account)
+6. salary-list.php (Shows past and current salaries generated)
+7. tasks.php
+
+
+
+
