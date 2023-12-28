@@ -1,0 +1,10 @@
+npm init --y
+
+
+we need 2 server 
+-TCP server  
+-HTTP server
+
+npm install express
+npm install body-parser
+npm install ws
