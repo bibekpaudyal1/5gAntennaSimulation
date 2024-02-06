@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenStreetMap Example</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-draw/dist/leaflet.draw.css" />
+    <style>
+        body, html { margin: 0; padding: 0; height: 100%; }
+        #map { width: 100%; height: calc(100% - 50px); }
+        .button-container { text-align: center; margin-top: 10px; }
+        .button { 
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition-duration: 0.4s;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .button:hover {
+            background-color: #45a049; /* Darker Green */
+            box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.4);
+        }
+        .leaflet-popup-content-wrapper {
+            background: white;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .leaflet-popup-content {
+            width: 200px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <div class="button-container">
+        <button class="button" onclick="compute5GConfiguration()">Compute 5G Configuration</button>
+    </div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-draw"></script>
+    <script>
+        var map = L.map('map').setView([46.227638, 2.213749], 6); // Center map on France and set zoom level
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+        }).addTo(map);
+
+        var drawnItems = new L.FeatureGroup();
+        map.addLayer(drawnItems);
+
+        var drawControl = new L.Control.Draw({
+            draw: {
+                polygon: false,
+                polyline: false,
+                rectangle: true,
+                circle: false,
+                marker: false
+            },
+            edit: {
+                featureGroup: drawnItems
+            }
+        });
+        map.addControl(drawControl);
+
+        var selectedLayer = null; // Variable to store the selected area layer
+        var antennaMarker = null; // Variable to store the antenna marker
+
+        map.on('draw:created', function (e) {
+            drawnItems.clearLayers();
+            drawnItems.addLayer(e.layer);
+            selectedLayer = e.layer; // Store the layer of the selected area
+        });
+
+        // Function to add antenna within selected area
+        function addAntenna(lat, lng) {
+            if (selectedLayer !== null && selectedLayer.getBounds().contains([lat, lng])) {
+                if (antennaMarker !== null) {
+                    map.removeLayer(antennaMarker); // Remove previously added antenna
+                }
+                antennaMarker = L.marker([lat, lng], { draggable: true }).addTo(map).bindPopup('Antenna').openPopup();
+                antennaMarker.on('dragend', function(e) {
+                    var marker = e.target;
+                    if (!selectedLayer.getBounds().contains(marker.getLatLng())) {
+                        map.removeLayer(marker); // Remove marker if dragged outside the selected area
+                    }
+                });
+            } else {
+                alert('Please select an area on the map first and add the antenna within it.');
+            }
+        }
+
+        // Listen for user right-click event on map
+        map.on('contextmenu', function(e) {
+            addAntenna(e.latlng.lat, e.latlng.lng);
+        });
+
+        // Function to remove antenna marker
+        function removeAntenna() {
+            if (antennaMarker !== null) {
+                map.removeLayer(antennaMarker);
+                antennaMarker = null;
+            }
+        }
+
+        // Function to compute and display 5G configuration
+        function compute5GConfiguration() {
+            if (selectedLayer !== null) {
+                // Perform computation here
+                var result = "5G Configuration Result: Example Result";
+                var popup = L.popup()
+                    .setLatLng(map.getCenter())
+                    .setContent('<p>' + result + '</p><button onclick="closePopup()">Cancel</button>')
+                    .openOn(map);
+            } else {
+                alert('Please select an area on the map first.');
+            }
+        }
+
+        function closePopup() {
+            map.closePopup();
+        }
+
+        // Listen for delete event on drawn area
+        map.on('draw:deleted', function (e) {
+            selectedLayer = null; // Clear the selected layer
+            removeAntenna(); // Remove antenna if it exists
+        });
+    </script>
+</body>
+</html>
