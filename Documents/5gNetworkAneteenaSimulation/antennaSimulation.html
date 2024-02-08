@@ -1,139 +1,368 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OpenStreetMap Example</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>5G Configurations</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-    <link rel="stylesheet" href="https://unpkg.com/leaflet-draw/dist/leaflet.draw.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet-draw/dist/leaflet.draw.css"
+    />
     <style>
-        body, html { margin: 0; padding: 0; height: 100%; }
-        #map { width: 100%; height: calc(100% - 50px); }
-        .button-container { text-align: center; margin-top: 10px; }
-        .button { 
-            background-color: #4CAF50; /* Green */
-            border: none;
-            color: white;
-            padding: 15px 32px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 4px 2px;
-            cursor: pointer;
-            border-radius: 8px;
-            transition-duration: 0.4s;
-            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-        }
-        .button:hover {
-            background-color: #45a049; /* Darker Green */
-            box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.4);
-        }
-        .leaflet-popup-content-wrapper {
-            background: white;
-            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-        }
-        .leaflet-popup-content {
-            width: 200px;
-            text-align: center;
-        }
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+      }
+      #map {
+        width: 100%;
+        height: calc(100% - 50px);
+      }
+      .button-container {
+        text-align: center;
+        margin-top: 10px;
+      }
+      .button {
+        background-color: #4caf50;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 8px;
+        transition-duration: 0.4s;
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+      }
+      .button:hover {
+        background-color: #45a049;
+        box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.4);
+      }
+      .leaflet-popup-content-wrapper {
+        background: white;
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+      }
+      .leaflet-popup-content {
+        width: 200px;
+        text-align: center;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div id="map"></div>
     <div class="button-container">
-        <button class="button" onclick="compute5GConfiguration()">Compute 5G Configuration</button>
+      <button class="button" onclick="compute5GConfiguration()">
+        Compute 5G Configuration
+      </button>
     </div>
 
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script src="https://unpkg.com/leaflet-draw"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Turf.js/5.1.6/turf.min.js"></script>
     <script>
-        var map = L.map('map').setView([46.227638, 2.213749], 6); // Center map on France and set zoom level
+      var map = L.map("map").setView([46.227638, 2.213749], 6); // Center map on France and  zoom level
 
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            maxZoom: 19,
-        }).addTo(map);
+      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        maxZoom: 19,
+      }).addTo(map);
 
-        var drawnItems = new L.FeatureGroup();
-        map.addLayer(drawnItems);
+      var drawnItems = new L.FeatureGroup();
+      map.addLayer(drawnItems);
 
-        var drawControl = new L.Control.Draw({
-            draw: {
-                polygon: false,
-                polyline: false,
-                rectangle: true,
-                circle: false,
-                marker: false
-            },
-            edit: {
-                featureGroup: drawnItems
+      var drawControl = new L.Control.Draw({
+        draw: {
+          polygon: false,
+          polyline: false,
+          rectangle: true,
+          circle: false,
+          marker: false,
+        },
+        edit: {
+          featureGroup: drawnItems,
+        },
+      });
+      map.addControl(drawControl);
+
+      var selectedLayer = null;
+      var antennaMarker = null;
+
+      map.on("draw:created", function (e) {
+        drawnItems.clearLayers();
+        drawnItems.addLayer(e.layer);
+        selectedLayer = e.layer;
+      });
+
+//       function addAntenna(e) {
+//     if (selectedLayer !== null && selectedLayer.getBounds().contains(e.latlng)) {
+//         if (antennaMarker !== null) {
+//             map.removeLayer(antennaMarker);
+//         }
+//         antennaMarker = L.marker(e.latlng, { draggable: true }).addTo(map).bindPopup('Antenna').openPopup();
+//         antennaMarker.on('dragend', function(e) {
+//             var marker = e.target;
+//             if (!selectedLayer.getBounds().contains(marker.getLatLng())) {
+//                 map.removeLayer(marker);
+//             }
+//         });
+
+//         // Perform reverse geocoding to get address information
+//         fetch(`https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${e.latlng.lat}&lon=${e.latlng.lng}`)
+//             .then(response => {
+//                 if (!response.ok) {
+//                     throw new Error(`Error fetching data: ${response.status} ${response.statusText}`);
+//                 }
+//                 return response.json();
+//             })
+//             .then(data => {
+//                 if (data.address) {
+//                     // Extract the department from the address information
+//                     let department = data.address.county || '';
+//                     // Load JSON data from density.json file
+//                     fetch('density.json')
+//                         .then(response => {
+//                             if (!response.ok) {
+//                                 throw new Error(`Error fetching data: ${response.status} ${response.statusText}`);
+//                             }
+//                             return response.json();
+//                         })
+//                         .then(densityData => {
+//                             // Find the corresponding density based on the department name
+//                             let density = findMatchingDensity(department, densityData);
+//                             // Extract and format the region information
+//                             let region = data.address.region ? data.address.region : '';
+//                             let adminArea = data.address.state ? data.address.state : '';
+//                             let regionInfo = (region && adminArea) ? `${region}, ${adminArea}` : (region ? region : adminArea);
+//                             // Display location information in the popup including the density
+//                             antennaMarker.bindPopup(`Antenna<br>Location: ${data.display_name}<br>Region: ${regionInfo}<br>Density: ${density}`).openPopup();
+//                         })
+//                         .catch(error => {
+//                             console.error('Error fetching data:', error);
+//                         });
+//                 }
+//             })
+//             .catch(error => {
+//                 console.error('Error fetching data:', error);
+//             });
+//     } else {
+//         alert('Please select an area on the map first and add the antenna within it.');
+//     }
+// }
+
+// function findMatchingDensity(department, densityData) {
+//     if (!department) return 'N/A'; // Handle case where department is undefined
+//     // Normalize department name for comparison (convert to lowercase and remove special characters)
+//     const normalizedDepartment = department.toLowerCase().replace(/[^a-zA-Z ]/g, '');
+
+//     // Find the corresponding density based on the department name
+//     const matchingEntry = densityData.find(entry => {
+//         const normalizedEntryDepartment = entry.Department.toLowerCase().replace(/[^a-zA-Z ]/g, '');
+//         return normalizedEntryDepartment.includes(normalizedDepartment);
+//     });
+
+//     // Return the density if a matching entry is found, otherwise return 'N/A'
+//     return matchingEntry ? matchingEntry.Density : 'N/A';
+// }
+
+
+function addAntenna(e) {
+    if (selectedLayer !== null && selectedLayer.getBounds().contains(e.latlng)) {
+        if (antennaMarker !== null) {
+            map.removeLayer(antennaMarker);
+        }
+        antennaMarker = L.marker(e.latlng, { draggable: true }).addTo(map).bindPopup('Antenna').openPopup();
+        antennaMarker.on('dragend', function(e) {
+            var marker = e.target;
+            if (!selectedLayer.getBounds().contains(marker.getLatLng())) {
+                map.removeLayer(marker);
             }
         });
-        map.addControl(drawControl);
 
-        var selectedLayer = null; // Variable to store the selected area layer
-        var antennaMarker = null; // Variable to store the antenna marker
-
-        map.on('draw:created', function (e) {
-            drawnItems.clearLayers();
-            drawnItems.addLayer(e.layer);
-            selectedLayer = e.layer; // Store the layer of the selected area
-        });
-
-        // Function to add antenna within selected area
-        function addAntenna(lat, lng) {
-            if (selectedLayer !== null && selectedLayer.getBounds().contains([lat, lng])) {
-                if (antennaMarker !== null) {
-                    map.removeLayer(antennaMarker); // Remove previously added antenna
+        // Perform reverse geocoding to get address information
+        fetch(`https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${e.latlng.lat}&lon=${e.latlng.lng}`)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`Error fetching data: ${response.status} ${response.statusText}`);
                 }
-                antennaMarker = L.marker([lat, lng], { draggable: true }).addTo(map).bindPopup('Antenna').openPopup();
-                antennaMarker.on('dragend', function(e) {
-                    var marker = e.target;
-                    if (!selectedLayer.getBounds().contains(marker.getLatLng())) {
-                        map.removeLayer(marker); // Remove marker if dragged outside the selected area
-                    }
-                });
-            } else {
-                alert('Please select an area on the map first and add the antenna within it.');
-            }
+                return response.json();
+            })
+            .then(data => {
+                if (data.address) {
+                    let adminArea = data.address.region ? data.address.region : '';
+                    let regionFromAPI = data.address.state ? data.address.state : '';
+                    console.log(regionFromAPI);
+
+                    // Fetch density.json
+                    fetch('density.json')
+                        .then(response => {
+                            if (!response.ok) {
+                                throw new Error(`Error fetching density data: ${response.status} ${response.statusText}`);
+                            }
+                            return response.json();
+                        })
+                        .then(densityData => {
+                            // Find the density that matches the region from the API
+                            let matchingDensity = densityData.find(regionData => regionData["Region"].toLowerCase() === regionFromAPI.toLowerCase());
+                            
+
+                            if (matchingDensity) {
+                                let densityValue = matchingDensity["Density (pers/km²)"];
+                                antennaMarker.bindPopup(`Antenna<br>Location: ${data.display_name}<br>Region: ${regionFromAPI}<br>Density: ${matchingDensity["Density (pers/km²)"]}`).openPopup();
+                                compute5GConfiguration(regionFromAPI, densityValue);
+                            } else {
+                                antennaMarker.bindPopup(`Antenna<br>Location: ${data.display_name}<br>Region: ${regionFromAPI}<br>No matching density found.`).openPopup();
+                            }
+                        })
+                        .catch(error => {
+                            console.error('Error fetching density data:', error);
+                        });
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            });
+    } else {
+        alert('Please select an area on the map first and add the antenna within it.');
+    }
+}
+
+
+
+
+      map.on("click", addAntenna);
+
+      function removeAntenna() {
+        if (antennaMarker !== null) {
+          map.removeLayer(antennaMarker);
+          antennaMarker = null;
         }
+      }
 
-        // Listen for user right-click event on map
-        map.on('contextmenu', function(e) {
-            addAntenna(e.latlng.lat, e.latlng.lng);
-        });
+      var is5GComputed = false;
+      function compute5GConfiguration(regionFromAPI, matchingDensity) {
+        if (!is5GComputed && selectedLayer !== null) {
+          // Set the flag to true to prevent repeated calls
+          is5GComputed = true;
 
-        // Function to remove antenna marker
-        function removeAntenna() {
-            if (antennaMarker !== null) {
-                map.removeLayer(antennaMarker);
-                antennaMarker = null;
-            }
+          // Calculate area of selected region
+          var area = L.GeometryUtil.geodesicArea(selectedLayer.getLatLngs()[0]);
+          var areaInSqKm = (area / 1000000).toFixed(2);
+
+          // Perform other computation for 5G configuration
+          var result = `${regionFromAPI} ${matchingDensity}`;
+
+          // Display result in popup
+          var popupContent =
+            "<p>" +
+            result +
+            "</p>" +
+            "<p>Selected Area: " +
+            areaInSqKm +
+            " sq km</p>" +
+            '<button onclick="closePopup()">Cancel</button>';
+
+          var bounds = selectedLayer.getBounds();
+          var southWest = bounds.getSouthWest();
+          var northEast = bounds.getNorthEast();
+          var bboxString = `${southWest.lat},${southWest.lng},${northEast.lat},${northEast.lng}`;
+          var query = `[out:json][timeout:25];
+            (
+                way["highway"](${bboxString});
+            );
+            out body;
+        `;
+          var url =
+            "https://lz4.overpass-api.de/api/interpreter?data=" +
+            encodeURIComponent(query);
+
+          // node(around:20)["name"];
+          //         node(around:20)["addr:city"];
+          fetch(url)
+            .then((response) => {
+              if (!response.ok) {
+                throw new Error(
+                  `Error fetching data: ${response.status} ${response.statusText}`
+                );
+              }
+              return response.json();
+            })
+            .then((data) => {
+              console.log("Data:", data); // Log data to console for debugging
+
+              // Process road data and area information
+              var roadTypes = {};
+              var roadSpeeds = {};
+              var areaInfo = "";
+              data.elements.forEach((element) => {
+                if (element.tags && element.tags.highway) {
+                  var type = element.tags.highway;
+                  var speed = element.tags.maxspeed || "Unknown";
+                  console.log(speed);
+                  if (!roadTypes[type]) {
+                    roadTypes[type] = 1;
+                    roadSpeeds[type] = speed;
+                  } else {
+                    roadTypes[type]++;
+                  }
+                  // Draw the road on the map if it's a way and has geometry
+                  if (element.type === "way" && element.geometry) {
+                    var latLngs = element.geometry.map((point) =>
+                      L.latLng(point.lat, point.lon)
+                    );
+                    L.polyline(latLngs, { color: "blue" }).addTo(map);
+                  }
+                }
+              });
+
+              var roadInfo = "";
+              for (var type in roadTypes) {
+                roadInfo +=
+                  "<p>" +
+                  type +
+                  ": " +
+                  roadTypes[type] +
+                  " (Max Speed: "  +
+                  roadSpeeds[type] +
+                  ") </p>";
+              }
+
+              var popupContentWithRoads =
+                popupContent +
+                "<h3>Road Types:</h3>" +
+                roadInfo +
+                "<h3>Area Information:</h3>";
+              // areaInfo
+
+              // Display the popup with all information
+              var popup = L.popup()
+                .setLatLng(map.getCenter())
+                .setContent(popupContentWithRoads)
+                .openOn(map);
+            })
+            .catch((error) => {
+              console.error("Error fetching data:", error); // Log any errors that occur
+              alert("Error fetching data. Please try again later.");
+            });
+        } else if (is5GComputed) {
+          alert("5G configuration has already been computed."); // Alert user if 5G configuration has already been computed
+        } else {
+          alert("Please select an area on the map first.");
         }
+      }
 
-        // Function to compute and display 5G configuration
-        function compute5GConfiguration() {
-            if (selectedLayer !== null) {
-                // Perform computation here
-                var result = "5G Configuration Result: Example Result";
-                var popup = L.popup()
-                    .setLatLng(map.getCenter())
-                    .setContent('<p>' + result + '</p><button onclick="closePopup()">Cancel</button>')
-                    .openOn(map);
-            } else {
-                alert('Please select an area on the map first.');
-            }
-        }
+      function closePopup() {
+        map.closePopup();
+      }
 
-        function closePopup() {
-            map.closePopup();
-        }
-
-        // Listen for delete event on drawn area
-        map.on('draw:deleted', function (e) {
-            selectedLayer = null; // Clear the selected layer
-            removeAntenna(); // Remove antenna if it exists
-        });
+      // Listen for delete event on drawn area
+      map.on("draw:deleted", function (e) {
+        selectedLayer = null; // Clear the selected layer
+        removeAntenna(); // Remove antenna if it exists
+      });
     </script>
-</body>
+  </body>
 </html>

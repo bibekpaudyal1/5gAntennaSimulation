@@ -1,0 +1,858 @@
+[
+    {
+      "Department▲": "Ain",
+      "ISO 3166-2": "FR-01",
+      "Region": "Auvergne - Rhône - Alpes",
+      "Capital": "Bourg-en-Bresse",
+      "Area (km²)": "5 778,5",
+      "Population": "671 937",
+      "Density (pers/km²)": "116,3"
+    },
+    {
+      "Department▲": "Aisne",
+      "ISO 3166-2": "FR-02",
+      "Region": "Hauts-de-France",
+      "Capital": "Laon",
+      "Area (km²)": "7 418,4",
+      "Population": "522 791",
+      "Density (pers/km²)": "70,5"
+    },
+    {
+      "Department▲": "Allier",
+      "ISO 3166-2": "FR-03",
+      "Region": "Auvergne - Rhône - Alpes",
+      "Capital": "Moulins",
+      "Area (km²)": "7 365,3",
+      "Population": "332 443",
+      "Density (pers/km²)": "45,1"
+    },
+    {
+      "Department▲": "Alpes-de-Haute-Provence",
+      "ISO 3166-2": "FR-04",
+      "Region": "Provence - Alpes - Côte d'Azur",
+      "Capital": "Digne-les-Bains",
+      "Area (km²)": "6 994,1",
+      "Population": "166 654",
+      "Density (pers/km²)": "23,8"
+    },
+    {
+      "Department▲": "Alpes-Maritimes",
+      "ISO 3166-2": "FR-06",
+      "Region": "Provence - Alpes - Côte d'Azur",
+      "Capital": "Nice",
+      "Area (km²)": "4 295,0",
+      "Population": "1 110 328",
+      "Density (pers/km²)": "258,5"
+    },
+    {
+      "Department▲": "Ardèche",
+      "ISO 3166-2": "FR-07",
+      "Region": "Auvergne - Rhône - Alpes",
+      "Capital": "Privas",
+      "Area (km²)": "5 560,5",
+      "Population": "332 230",
+      "Density (pers/km²)": "59,7"
+    },
+    {
+      "Department▲": "Ardennes",
+      "ISO 3166-2": "FR-08",
+      "Region": "Grand Est",
+      "Capital": "Charleville-Mézières",
+      "Area (km²)": "5 250,3",
+      "Population": "265 417",
+      "Density (pers/km²)": "50,6"
+    },
+    {
+      "Department▲": "Ariège",
+      "ISO 3166-2": "FR-09",
+      "Region": "Occitanie",
+      "Capital": "Foix",
+      "Area (km²)": "4 921,5",
+      "Population": "154 581",
+      "Density (pers/km²)": "31,4"
+    },
+    {
+      "Department▲": "Aube",
+      "ISO 3166-2": "FR-10",
+      "Region": "Grand Est",
+      "Capital": "Troyes",
+      "Area (km²)": "6 022,3",
+      "Population": "312 713",
+      "Density (pers/km²)": "51,9"
+    },
+    {
+      "Department▲": "Aude",
+      "ISO 3166-2": "FR-11",
+      "Region": "Occitanie",
+      "Capital": "Carcassonne",
+      "Area (km²)": "6 354,6",
+      "Population": "379 775",
+      "Density (pers/km²)": "59,8"
+    },
+    {
+      "Department▲": "Aveyron",
+      "ISO 3166-2": "FR-12",
+      "Region": "Occitanie",
+      "Capital": "Rodez",
+      "Area (km²)": "8 770,1",
+      "Population": "279 504",
+      "Density (pers/km²)": "31,9"
+    },
+    {
+      "Department▲": "Bas-Rhin",
+      "ISO 3166-2": "FR-67",
+      "Region": "Grand Est",
+      "Capital": "Strasbourg",
+      "Area (km²)": "4 795,5",
+      "Population": "1 168 422",
+      "Density (pers/km²)": "243,6"
+    },
+    {
+      "Department▲": "Bouches-du-Rhône",
+      "ISO 3166-2": "FR-13",
+      "Region": "Provence - Alpes - Côte d'Azur",
+      "Capital": "Marseille",
+      "Area (km²)": "5 098,2",
+      "Population": "2 069 118",
+      "Density (pers/km²)": "405,9"
+    },
+    {
+      "Department▲": "Calvados",
+      "ISO 3166-2": "FR-14",
+      "Region": "Normandie",
+      "Capital": "Caen",
+      "Area (km²)": "5 592,2",
+      "Population": "700 595",
+      "Density (pers/km²)": "125,3"
+    },
+    {
+      "Department▲": "Cantal",
+      "ISO 3166-2": "FR-15",
+      "Region": "Auvergne - Rhône - Alpes",
+      "Capital": "Aurillac",
+      "Area (km²)": "5 767,2",
+      "Population": "143 639",
+      "Density (pers/km²)": "24,9"
+    },
+    {
+      "Department▲": "Charente",
+      "ISO 3166-2": "FR-16",
+      "Region": "Nouvelle-Aquitaine",
+      "Capital": "Angoulême",
+      "Area (km²)": "5 964,0",
+      "Population": "351 036",
+      "Density (pers/km²)": "58,9"
+    },
+    {
+      "Department▲": "Charente-Maritime",
+      "ISO 3166-2": "FR-17",
+      "Region": "Nouvelle-Aquitaine",
+      "Capital": "La Rochelle",
+      "Area (km²)": "6 898,6",
+      "Population": "665 904",
+      "Density (pers/km²)": "96,5"
+    },
+    {
+      "Department▲": "Cher",
+      "ISO 3166-2": "FR-18",
+      "Region": "Centre - Val de Loire",
+      "Capital": "Bourges",
+      "Area (km²)": "7 293,0",
+      "Population": "297 274",
+      "Density (pers/km²)": "40,8"
+    },
+    {
+      "Department▲": "Corrèze",
+      "ISO 3166-2": "FR-19",
+      "Region": "Nouvelle-Aquitaine",
+      "Capital": "Tulle",
+      "Area (km²)": "5 889,8",
+      "Population": "237 077",
+      "Density (pers/km²)": "40,3"
+    },
+    {
+      "Department▲": "Corse-du-Sud",
+      "ISO 3166-2": "FR-2A",
+      "Region": "Corse [Korsika]",
+      "Capital": "Ajaccio",
+      "Area (km²)": "4 037,5",
+      "Population": "163 955",
+      "Density (pers/km²)": "40,6"
+    },
+    {
+      "Department▲": "Côte-d'Or",
+      "ISO 3166-2": "FR-21",
+      "Region": "Bourgogne-Franche-Comté",
+      "Capital": "Dijon",
+      "Area (km²)": "8 787,5",
+      "Population": "536 166",
+      "Density (pers/km²)": "61,0"
+    },
+    {
+      "Department▲": "Côtes-d'Armor",
+      "ISO 3166-2": "FR-22",
+      "Region": "Bretagne",
+      "Capital": "Saint-Brieuc",
+      "Area (km²)": "6 982,9",
+      "Population": "607 834",
+      "Density (pers/km²)": "87,0"
+    },
+    {
+      "Department▲": "Creuse",
+      "ISO 3166-2": "FR-23",
+      "Region": "Nouvelle-Aquitaine",
+      "Capital": "Guéret",
+      "Area (km²)": "5 589,6",
+      "Population": "113 106",
+      "Density (pers/km²)": "20,2"
+    },
+    {
+      "Department▲": "Deux-Sèvres",
+      "ISO 3166-2": "FR-79",
+      "Region": "Nouvelle-Aquitaine",
+      "Capital": "Niort",
+      "Area (km²)": "6 028,9",
+      "Population": "373 899",
+      "Density (pers/km²)": "62,0"
+    },
+    {
+      "Department▲": "Dordogne",
+      "ISO 3166-2": "FR-24",
+      "Region": "Nouvelle-Aquitaine",
+      "Capital": "Périgueux",
+      "Area (km²)": "9 204,7",
+      "Population": "411 382",
+      "Density (pers/km²)": "44,7"
+    },
+    {
+      "Department▲": "Doubs",
+      "ISO 3166-2": "FR-25",
+      "Region": "Bourgogne-Franche-Comté",
+      "Capital": "Besançon",
+      "Area (km²)": "5 237,4",
+      "Population": "550 112",
+      "Density (pers/km²)": "105,0"
+    },
+    {
+      "Department▲": "Drôme",
+      "ISO 3166-2": "FR-26",
+      "Region": "Auvergne - Rhône - Alpes",
+      "Capital": "Valence",
+      "Area (km²)": "6 553,8",
+      "Population": "523 185",
+      "Density (pers/km²)": "79,8"
+    },
+    {
+      "Department▲": "Essonne",
+      "ISO 3166-2": "FR-91",
+      "Region": "Île-de-France",
+      "Capital": "Évry",
+      "Area (km²)": "1 818,5",
+      "Population": "1 316 053",
+      "Density (pers/km²)": "723,7"
+    },
+    {
+      "Department▲": "Eure",
+      "ISO 3166-2": "FR-27",
+      "Region": "Normandie",
+      "Capital": "Évreux",
+      "Area (km²)": "6 034,4",
+      "Population": "596 710",
+      "Density (pers/km²)": "98,9"
+    },
+    {
+      "Department▲": "Eure-et-Loir",
+      "ISO 3166-2": "FR-28",
+      "Region": "Centre - Val de Loire",
+      "Capital": "Chartres",
+      "Area (km²)": "5 927,3",
+      "Population": "428 994",
+      "Density (pers/km²)": "72,4"
+    },
+    {
+      "Department▲": "Finistère",
+      "ISO 3166-2": "FR-29",
+      "Region": "Bretagne",
+      "Capital": "Quimper",
+      "Area (km²)": "6 760,4",
+      "Population": "926 065",
+      "Density (pers/km²)": "137,0"
+    },
+    {
+      "Department▲": "Gard",
+      "ISO 3166-2": "FR-30",
+      "Region": "Occitanie",
+      "Capital": "Nîmes",
+      "Area (km²)": "5 875,4",
+      "Population": "757 435",
+      "Density (pers/km²)": "128,9"
+    },
+    {
+      "Department▲": "Gers",
+      "ISO 3166-2": "FR-32",
+      "Region": "Occitanie",
+      "Capital": "Auch",
+      "Area (km²)": "6 303,6",
+      "Population": "192 820",
+      "Density (pers/km²)": "30,6"
+    },
+    {
+      "Department▲": "Gironde",
+      "ISO 3166-2": "FR-33",
+      "Region": "Nouvelle-Aquitaine",
+      "Capital": "Bordeaux",
+      "Area (km²)": "10 168,6",
+      "Population": "1 691 437",
+      "Density (pers/km²)": "166,3"
+    },
+    {
+      "Department▲": "Haut-Rhin",
+      "ISO 3166-2": "FR-68",
+      "Region": "Grand Est",
+      "Capital": "Colmar",
+      "Area (km²)": "3 527,4",
+      "Population": "769 231",
+      "Density (pers/km²)": "218,1"
+    },
+    {
+      "Department▲": "Haute-Corse",
+      "ISO 3166-2": "FR-2B",
+      "Region": "Corse [Korsika]",
+      "Capital": "Bastia",
+      "Area (km²)": "4 722,3",
+      "Population": "187 300",
+      "Density (pers/km²)": "39,7"
+    },
+    {
+      "Department▲": "Haute-Garonne",
+      "ISO 3166-2": "FR-31",
+      "Region": "Occitanie",
+      "Capital": "Toulouse",
+      "Area (km²)": "6365,1",
+      "Population": "1 470 367",
+      "Density (pers/km²)": "231,0"
+    },
+    {
+      "Department▲": "Haute-Loire",
+      "ISO 3166-2": "FR-43",
+      "Region": "Auvergne - Rhône - Alpes",
+      "Capital": "Le Puy-en-Velay",
+      "Area (km²)": "4 997,7",
+      "Population": "226 878",
+      "Density (pers/km²)": "45,4"
+    },
+    {
+      "Department▲": "Haute-Marne",
+      "ISO 3166-2": "FR-52",
+      "Region": "Grand Est",
+      "Capital": "Chaumont",
+      "Area (km²)": "6 249,9",
+      "Population": "167 544",
+      "Density (pers/km²)": "26,8"
+    },
+    {
+      "Department▲": "Haute-Saône",
+      "ISO 3166-2": "FR-70",
+      "Region": "Bourgogne-Franche-Comté",
+      "Capital": "Vesoul",
+      "Area (km²)": "5 382,3",
+      "Population": "231 773",
+      "Density (pers/km²)": "43,1"
+    },
+    {
+      "Department▲": "Haute-Savoie",
+      "ISO 3166-2": "FR-74",
+      "Region": "Auvergne - Rhône - Alpes",
+      "Capital": "Annecy",
+      "Area (km²)": "4 591,9",
+      "Population": "862 267",
+      "Density (pers/km²)": "187,8"
+    },
+    {
+      "Department▲": "Haute-Vienne",
+      "ISO 3166-2": "FR-87",
+      "Region": "Nouvelle-Aquitaine",
+      "Capital": "Limoges",
+      "Area (km²)": "5 547,4",
+      "Population": "370 113",
+      "Density (pers/km²)": "66,7"
+    },
+    {
+      "Department▲": "Hautes-Alpes",
+      "ISO 3166-2": "FR-05",
+      "Region": "Provence - Alpes - Côte d'Azur",
+      "Capital": "Gap",
+      "Area (km²)": "5 685,6",
+      "Population": "139 942",
+      "Density (pers/km²)": "24,6"
+    },
+    {
+      "Department▲": "Hautes-Pyrénées",
+      "ISO 3166-2": "FR-65",
+      "Region": "Occitanie",
+      "Capital": "Tarbes",
+      "Area (km²)": "4 528,8",
+      "Population": "230 583",
+      "Density (pers/km²)": "50,9"
+    },
+    {
+      "Department▲": "Hauts-de-Seine",
+      "ISO 3166-2": "FR-92",
+      "Region": "Île-de-France",
+      "Capital": "Nanterre",
+      "Area (km²)": "175,6",
+      "Population": "1 642 002",
+      "Density (pers/km²)": "9 350,8"
+    },
+    {
+      "Department▲": "Hérault",
+      "ISO 3166-2": "FR-34",
+      "Region": "Occitanie",
+      "Capital": "Montpellier",
+      "Area (km²)": "6 234,5",
+      "Population": "1 232 805",
+      "Density (pers/km²)": "197,7"
+    },
+    {
+      "Department▲": "Ille-et-Vilaine",
+      "ISO 3166-2": "FR-35",
+      "Region": "Bretagne",
+      "Capital": "Rennes",
+      "Area (km²)": "6 775,0",
+      "Population": "1 065 226",
+      "Density (pers/km²)": "157,3"
+    },
+    {
+      "Department▲": "Indre",
+      "ISO 3166-2": "FR-36",
+      "Region": "Centre - Val de Loire",
+      "Capital": "Châteauroux",
+      "Area (km²)": "6 790,7",
+      "Population": "219 872",
+      "Density (pers/km²)": "32,4"
+    },
+    {
+      "Department▲": "Indre-et-Loire",
+      "ISO 3166-2": "FR-37",
+      "Region": "Centre - Val de Loire",
+      "Capital": "Tours",
+      "Area (km²)": "6 127,0",
+      "Population": "620 851",
+      "Density (pers/km²)": "101,3"
+    },
+    {
+      "Department▲": "Isère",
+      "ISO 3166-2": "FR-38",
+      "Region": "Auvergne - Rhône - Alpes",
+      "Capital": "Grenoble",
+      "Area (km²)": "7 431,8",
+      "Population": "1 272 791",
+      "Density (pers/km²)": "171,2"
+    },
+    {
+      "Department▲": "Jura",
+      "ISO 3166-2": "FR-39",
+      "Region": "Bourgogne-Franche-Comté",
+      "Capital": "Lons-le-Saunier",
+      "Area (km²)": "4 999,3",
+      "Population": "261 950",
+      "Density (pers/km²)": "52,4"
+    },
+    {
+      "Department▲": "Landes",
+      "ISO 3166-2": "FR-40",
+      "Region": "Nouvelle-Aquitaine",
+      "Capital": "Mont-de-Marsan",
+      "Area (km²)": "9 243,6",
+      "Population": "412 789",
+      "Density (pers/km²)": "44,6"
+    },
+    {
+      "Department▲": "Loir-et-Cher",
+      "ISO 3166-2": "FR-41",
+      "Region": "Centre - Val de Loire",
+      "Capital": "Blois",
+      "Area (km²)": "6 343,4",
+      "Population": "337 109",
+      "Density (pers/km²)": "53,1"
+    },
+    {
+      "Department▲": "Loire",
+      "ISO 3166-2": "FR-42",
+      "Region": "Auvergne - Rhône - Alpes",
+      "Capital": "Saint-Étienne",
+      "Area (km²)": "4 781,4",
+      "Population": "784 782",
+      "Density (pers/km²)": "164,1"
+    },
+    {
+      "Department▲": "Loire-Atlantique",
+      "ISO 3166-2": "FR-44",
+      "Region": "Pays de la Loire",
+      "Capital": "Nantes",
+      "Area (km²)": "6 815,4",
+      "Population": "1 488 246",
+      "Density (pers/km²)": "218,3"
+    },
+    {
+      "Department▲": "Loiret",
+      "ISO 3166-2": "FR-45",
+      "Region": "Centre - Val de Loire",
+      "Capital": "Orléans",
+      "Area (km²)": "6 775,3",
+      "Population": "691 203",
+      "Density (pers/km²)": "102,0"
+    },
+    {
+      "Department▲": "Lot",
+      "ISO 3166-2": "FR-46",
+      "Region": "Occitanie",
+      "Capital": "Cahors",
+      "Area (km²)": "5 217,7",
+      "Population": "172 420",
+      "Density (pers/km²)": "33,0"
+    },
+    {
+      "Department▲": "Lot-et-Garonne",
+      "ISO 3166-2": "FR-47",
+      "Region": "Nouvelle-Aquitaine",
+      "Capital": "Agen",
+      "Area (km²)": "5 361,5",
+      "Population": "341 278",
+      "Density (pers/km²)": "63,7"
+    },
+    {
+      "Department▲": "Lozère",
+      "ISO 3166-2": "FR-48",
+      "Region": "Occitanie",
+      "Capital": "Mende",
+      "Area (km²)": "5 167,2",
+      "Population": "76 873",
+      "Density (pers/km²)": "14,9"
+    },
+    {
+      "Department▲": "Maine-et-Loire",
+      "ISO 3166-2": "FR-49",
+      "Region": "Pays de la Loire",
+      "Capital": "Angers",
+      "Area (km²)": "7 168,8",
+      "Population": "903 142",
+      "Density (pers/km²)": "126,0"
+    },
+    {
+      "Department▲": "Manche",
+      "ISO 3166-2": "FR-50",
+      "Region": "Normandie",
+      "Capital": "Saint-Lô",
+      "Area (km²)": "5 938,8",
+      "Population": "509 579",
+      "Density (pers/km²)": "85,8"
+    },
+    {
+      "Department▲": "Marne",
+      "ISO 3166-2": "FR-51",
+      "Region": "Grand Est",
+      "Capital": "Châlons-en-Champagne",
+      "Area (km²)": "8 162,9",
+      "Population": "573 625",
+      "Density (pers/km²)": "70,3"
+    },
+    {
+      "Department▲": "Mayenne",
+      "ISO 3166-2": "FR-53",
+      "Region": "Pays de la Loire",
+      "Capital": "Laval",
+      "Area (km²)": "5 175,9",
+      "Population": "304 877",
+      "Density (pers/km²)": "58,9"
+    },
+    {
+      "Department▲": "Meurthe-et-Moselle",
+      "ISO 3166-2": "FR-54",
+      "Region": "Grand Est",
+      "Capital": "Nancy",
+      "Area (km²)": "5 246,1",
+      "Population": "742 131",
+      "Density (pers/km²)": "141,4"
+    },
+    {
+      "Department▲": "Meuse",
+      "ISO 3166-2": "FR-55",
+      "Region": "Grand Est",
+      "Capital": "Bar-le-Duc",
+      "Area (km²)": "6 211,8",
+      "Population": "189 365",
+      "Density (pers/km²)": "30,5"
+    },
+    {
+      "Department▲": "Morbihan",
+      "ISO 3166-2": "FR-56",
+      "Region": "Bretagne",
+      "Capital": "Vannes",
+      "Area (km²)": "6 823,7",
+      "Population": "777 574",
+      "Density (pers/km²)": "114,0"
+    },
+    {
+      "Department▲": "Moselle",
+      "ISO 3166-2": "FR-57",
+      "Region": "Grand Est",
+      "Capital": "Metz",
+      "Area (km²)": "6 216,5",
+      "Population": "1 045 571",
+      "Density (pers/km²)": "168,2"
+    },
+    {
+      "Department▲": "Nièvre",
+      "ISO 3166-2": "FR-58",
+      "Region": "Bourgogne-Franche-Comté",
+      "Capital": "Nevers",
+      "Area (km²)": "6 817,0",
+      "Population": "204 895",
+      "Density (pers/km²)": "30,0"
+    },
+    {
+      "Department▲": "Nord",
+      "ISO 3166-2": "FR-59",
+      "Region": "Hauts-de-France",
+      "Capital": "Lille",
+      "Area (km²)": "5 743,4",
+      "Population": "2 606 767",
+      "Density (pers/km²)": "453,8"
+    },
+    {
+      "Department▲": "Oise",
+      "ISO 3166-2": "FR-60",
+      "Region": "Hauts-de-France",
+      "Capital": "Beauvais",
+      "Area (km²)": "5 860,7",
+      "Population": "833 700",
+      "Density (pers/km²)": "142,2"
+    },
+    {
+      "Department▲": "Orne",
+      "ISO 3166-2": "FR-61",
+      "Region": "Normandie",
+      "Capital": "Alençon",
+      "Area (km²)": "6 103,0",
+      "Population": "285 100",
+      "Density (pers/km²)": "46,7"
+    },
+    {
+      "Department▲": "Paris",
+      "ISO 3166-2": "FR-75",
+      "Region": "Ile-de-France",
+      "Capital": "Paris",
+      "Area (km²)": "105,4",
+      "Population": "2 229 621",
+      "Density (pers/km²)": "21 161,9"
+    },
+    {
+      "Department▲": "Pas-de-Calais",
+      "ISO 3166-2": "FR-62",
+      "Region": "Hauts-de-France",
+      "Capital": "Arras",
+      "Area (km²)": "6 671,6",
+      "Population": "1 474 502",
+      "Density (pers/km²)": "221,2"
+    },
+    {
+      "Department▲": "Puy-de-Dôme",
+      "ISO 3166-2": "FR-63",
+      "Region": "Auvergne - Rhône - Alpes",
+      "Capital": "Clermont-Ferrand",
+      "Area (km²)": "7 970,3",
+      "Population": "668 457",
+      "Density (pers/km²)": "83,9"
+    },
+    {
+      "Department▲": "Pyrénées-Atlantiques",
+      "ISO 3166-2": "FR-64",
+      "Region": "Nouvelle-Aquitaine",
+      "Capital": "Pau",
+      "Area (km²)": "7 645,3",
+      "Population": "707 810",
+      "Density (pers/km²)": "92,6"
+    },
+    {
+      "Department▲": "Pyrénées-Orientales",
+      "ISO 3166-2": "FR-66",
+      "Region": "Occitanie",
+      "Capital": "Perpignan",
+      "Area (km²)": "4 116,7",
+      "Population": "484 971",
+      "Density (pers/km²)": "117,8"
+    },
+    {
+      "Department▲": "Rhône",
+      "ISO 3166-2": "FR-69",
+      "Region": "Auvergne - Rhône - Alpes",
+      "Capital": "Lyon",
+      "Area (km²)": "3 249,1",
+      "Population": "1 895 810",
+      "Density (pers/km²)": "583,3"
+    },
+    {
+      "Department▲": "Sarthe",
+      "ISO 3166-2": "FR-72",
+      "Region": "Pays de la Loire",
+      "Capital": "Le Mans",
+      "Area (km²)": "6 206,0",
+      "Population": "589 080",
+      "Density (pers/km²)": "94,8"
+    },
+    {
+      "Department▲": "Savoie",
+      "ISO 3166-2": "FR-73",
+      "Region": "Auvergne - Rhône - Alpes",
+      "Capital": "Chambéry",
+      "Area (km²)": "6 028,9",
+      "Population": "445 999",
+      "Density (pers/km²)": "74,0"
+    },
+    {
+      "Department▲": "Seine-et-Marne",
+      "ISO 3166-2": "FR-77",
+      "Region": "Île-de-France",
+      "Capital": "Melun",
+      "Area (km²)": "5 915,3",
+      "Population": "1 471 900",
+      "Density (pers/km²)": "248,8"
+    },
+    {
+      "Department▲": "Seine-Maritime",
+      "ISO 3166-2": "FR-76",
+      "Region": "Normandie",
+      "Capital": "Rouen",
+      "Area (km²)": "6 278,3",
+      "Population": "1 260 766",
+      "Density (pers/km²)": "200,9"
+    },
+    {
+      "Department▲": "Seine-Saint-Denis",
+      "ISO 3166-2": "FR-93",
+      "Region": "Île-de-France",
+      "Capital": "Bobigny",
+      "Area (km²)": "236,0",
+      "Population": "1 632 062",
+      "Density (pers/km²)": "6 912,5"
+    },
+    {
+      "Department▲": "Somme",
+      "ISO 3166-2": "FR-80",
+      "Region": "Hauts-de-France",
+      "Capital": "Amiens",
+      "Area (km²)": "6 170,5",
+      "Population": "572 799",
+      "Density (pers/km²)": "92,8"
+    },
+    {
+      "Department▲": "Tarn",
+      "ISO 3166-2": "FR-81",
+      "Region": "Occitanie",
+      "Capital": "Albi",
+      "Area (km²)": "5 758,8",
+      "Population": "397 179",
+      "Density (pers/km²)": "69,0"
+    },
+    {
+      "Department▲": "Tarn-et-Garonne",
+      "ISO 3166-2": "FR-82",
+      "Region": "Occitanie",
+      "Capital": "Montauban",
+      "Area (km²)": "3 718,0",
+      "Population": "258 781",
+      "Density (pers/km²)": "69,6"
+    },
+    {
+      "Department▲": "Territoire de Belfort",
+      "ISO 3166-2": "FR-90",
+      "Region": "Bourgogne-Franche-Comté",
+      "Capital": "Belfort",
+      "Area (km²)": "609,6",
+      "Population": "148 085",
+      "Density (pers/km²)": "242,9"
+    },
+    {
+      "Department▲": "Val-d'Oise",
+      "ISO 3166-2": "FR-95",
+      "Region": "Île-de-France",
+      "Capital": "Pontoise",
+      "Area (km²)": "1 246,7",
+      "Population": "1 421 826",
+      "Density (pers/km²)": "1 140,7"
+    },
+    {
+      "Department▲": "Val-de-Marne",
+      "ISO 3166-2": "FR-94",
+      "Region": "Île-de-France",
+      "Capital": "Créteil",
+      "Area (km²)": "245,0",
+      "Population": "1 405 596",
+      "Density (pers/km²)": "5 737,7"
+    },
+    {
+      "Department▲": "Var",
+      "ISO 3166-2": "FR-83",
+      "Region": "Provence - Alpes - Côte d'Azur",
+      "Capital": "Toulon",
+      "Area (km²)": "5 973,1",
+      "Population": "1 072 084",
+      "Density (pers/km²)": "179,6"
+    },
+    {
+      "Department▲": "Vaucluse",
+      "ISO 3166-2": "FR-84",
+      "Region": "Provence - Alpes - Côte d'Azur",
+      "Capital": "Avignon",
+      "Area (km²)": "3 567,6",
+      "Population": "578 993",
+      "Density (pers/km²)": "162,3"
+    },
+    {
+      "Department▲": "Vendée",
+      "ISO 3166-2": "FR-85",
+      "Region": "Pays de la Loire",
+      "Capital": "La Roche-sur-Yon",
+      "Area (km²)": "6 720,1",
+      "Population": "705 136",
+      "Density (pers/km²)": "104,9"
+    },
+    {
+      "Department▲": "Vienne",
+      "ISO 3166-2": "FR-86",
+      "Region": "Nouvelle-Aquitaine",
+      "Capital": "Poitiers",
+      "Area (km²)": "6 990,7",
+      "Population": "440 503",
+      "Density (pers/km²)": "63,0"
+    },
+    {
+      "Department▲": "Vosges",
+      "ISO 3166-2": "FR-88",
+      "Region": "Grand Est",
+      "Capital": "Épinal",
+      "Area (km²)": "5 874,6",
+      "Population": "367 624",
+      "Density (pers/km²)": "62,6"
+    },
+    {
+      "Department▲": "Yonne",
+      "ISO 3166-2": "FR-89",
+      "Region": "Bourgogne-Franche-Comté",
+      "Capital": "Auxerre",
+      "Area (km²)": "7 426,0",
+      "Population": "352 627",
+      "Density (pers/km²)": "47,4"
+    },
+    {
+      "Department▲": "Yvelines",
+      "ISO 3166-2": "FR-78",
+      "Region": "Île-de-France",
+      "Capital": "Versailles",
+      "Area (km²)": "2 284,8",
+      "Population": "1 448 465",
+      "Density (pers/km²)": "633,9"
+    }
+  ]
+  
